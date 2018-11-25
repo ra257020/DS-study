@@ -1,0 +1,32 @@
+package com.rahul.sorting;
+
+public class SelectionSort {
+
+	public static void main(String[] args) {
+		int[] array = { 5, 8, 4, 6, 3, 1, 2, 9, 7, 10 };
+		printArray(array);
+		sortArray(array);
+		printArray(array);
+	}
+
+	public static void sortArray(int[] array) {
+		for (int i = 0; i < array.length; i++) {
+			int indexForSmallestElement = i;
+			for (int j = i; j < array.length; j++) {
+				if (array[j] < array[indexForSmallestElement]) {
+					indexForSmallestElement = j;
+				}
+			}
+			int temp = array[i];
+			array[i] = array[indexForSmallestElement];
+			array[indexForSmallestElement] = temp;
+		}
+	}
+
+	public static void printArray(int[] array) {
+		for (int val : array) {
+			System.out.print(val + " ");
+		}
+		System.out.println();
+	}
+}
